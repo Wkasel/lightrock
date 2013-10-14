@@ -7,21 +7,21 @@ module.exports = (grunt) ->
         "* generated: <%= grunt.template.today(\"yyyy-mm-dd - HH:mm:ss.sss\") %>*/\n\n\n"
     js: 
       files:
-        app: ["lib/lightrock.jquery.coffee"]
+        app: ["src/lightrock.jquery.coffee"]
     coffee:
       options:
         bare: true
       compile:
         files:
-          "src/lightrock.jquery.js": "<%= js.files.app %>"
+          "dist/lightrock.jquery.js": "<%= js.files.app %>"
     watch:
       scripts:
         files:"<%= js.files.app %>"
         tasks: "default"
     uglify:
       dist:
-        src: "src/lightrock.jquery.js"
-        dest: "src/lightrock.jquery.min.js"        
+        src: "dist/lightrock.jquery.js"
+        dest: "dist/lightrock.jquery.min.js"        
       
   grunt.loadNpmTasks "grunt-contrib"
   grunt.loadNpmTasks "grunt-contrib-concat"
